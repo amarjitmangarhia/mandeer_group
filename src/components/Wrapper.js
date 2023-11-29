@@ -1,12 +1,14 @@
 // HelloComponent.js
 
 import React from 'react';
+import classes from "./Wrapper.module.css"
 
 // Functional component
-function Wrapper() {
+function Wrapper(props) {
+
   return (
-    <div>
-      <h1>Hello, React!</h1>
+    <div className={classes.container}>
+      {props.children}
     </div>
   );
 }
