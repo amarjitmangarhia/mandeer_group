@@ -8,6 +8,7 @@ import ContentLoader from './components/ContentLoader';
 function App() {
   return (
     <>
+    
       <BrowserRouter>
         <Suspense fallback={<ContentLoader />}>
           <Routes>
@@ -16,6 +17,8 @@ function App() {
               Adjust the route definition based on your ROUTES structure.
             */}
            <Route {...ROUTES.WRAPPER} />
+           <Route {...ROUTES.HOMEPAGE} />
+           
           </Routes>
           {/* Uncomment the following line if RenderRemoteComponent is defined */}
           {/* <RenderRemoteComponent /> */}
