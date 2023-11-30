@@ -5,6 +5,7 @@ import Table from '../Table/Table'
 import Graph from '../Graph/Graph'
 import Wrapper from '../Wrapper'
 import News from '../News/News'
+import Footer from '../Footer/Footer'
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
       <Graph />
       <Table />
       <News />
+      <Footer />
     </Wrapper>
   )
 }
