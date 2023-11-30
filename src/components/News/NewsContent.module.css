@@ -1,0 +1,38 @@
+.news {
+    display: flex;
+     justify-content: center; 
+    align-items: center; 
+}
+
+.news .image {
+    /* flex: 1; */
+    margin: 20px;
+}
+
+.news .image img {
+    width: 300px;
+}
+
+.news .content {
+    flex: 1;
+    margin: 20px;
+}
+
+.content h3 {
+    font-size: 30px;
+}
+
+
+
+@media screen and (max-width: 900px) {
+    .news {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .news .image img {
+        width: 500px;
+    }
+}

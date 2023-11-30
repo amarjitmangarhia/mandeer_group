@@ -1,11 +1,25 @@
+.content {
+    background-color: #20241D;
+    color: #E8E5E1;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .container {
-    border: 1px solid rgba(56, 56, 56, 0.264);
-    border-right: none;
-    border-left: none;
-    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #20241D;
+    color: #E8E5E1;
+}
+
+.text {
+    font-size: 60px;
+    text-align: center;
+    margin: 30px 0;
 }
 
 .dropdown label {
@@ -15,7 +29,7 @@
 .dropdown select {
     border: 2px solid;
     background:#455d7a; 
-    color: #e3e3e3; ;
+    color: #e3e3e3;
     width: 300px;
     text-align: center;
     padding: 10px;
@@ -29,6 +43,11 @@
     justify-content: space-between;
 }
 
+.dropdown option {
+    background-color: red;
+
+}
+
 .dropdown  button {
     background: #f95959; 
     color: #e3e3e3; ;
@@ -37,4 +56,29 @@
     height: auto;
     margin-left: 10px;
     border-radius: 30px;
+}
+
+
+@media screen and (max-width: 425px) {
+    .content {
+        background-color: #20241D;
+        color: #E8E5E1;
+        height: 100vh;
+    }
+    .dropdown {
+        width: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+    }
+
+    .dropdown button {
+        margin: 10px 0;
+        height: 40px;
+    }
+
+    .dropdown select {
+        width: 200px;
+    }
 }

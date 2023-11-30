@@ -1,5 +1,8 @@
 .container {
     padding: 20px;
+    background-color: #20241D;
+    color: #E8E5E1;
+    font-weight: 500;
 }
 
 .container .logo{
@@ -28,6 +31,7 @@
     background-color: #dbd8e3;
     cursor: pointer;
     transition: 0.3s;
+    color: black;
 }
 
 .container header nav li:hover{

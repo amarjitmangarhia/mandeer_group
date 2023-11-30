@@ -1,0 +1,27 @@
+.sections {
+    height: 400px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
+.sections .impArticles p{
+    font-size: 20px;
+}
+
+.sections .impLinks p {
+    font-size: 20px;
+}
+
+.sections .branding {
+    font-size: 80px;
+}
+
+.impNotes {
+    padding: 30px;
+    color: rgba(18, 17, 17, 0.287);
+}
