@@ -3,7 +3,8 @@ import classes from "./Table.module.css"
 
 const Table = () => {
     return (
-        <div>
+        <div className={classes.container}>
+            <h2>Table Analysis</h2>
             <table>
                 <thead>
                     <tr>

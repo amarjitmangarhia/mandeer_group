@@ -4,6 +4,7 @@ import Dropdown from '../Dropdown/Dropdown'
 import Table from '../Table/Table'
 import Graph from '../Graph/Graph'
 import Wrapper from '../Wrapper'
+import News from '../News/News'
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
       <Dropdown />
       <Graph />
       <Table />
+      <News />
     </Wrapper>
   )
 }
