@@ -4,7 +4,7 @@ import NewsContent from './NewsContent'
 import NewsData from './NewsData'
 
 const News = () => {
-console.log(NewsData)
+
   return (
     <div className={classes.container}>
             <h2>Latest Stock News</h2>
