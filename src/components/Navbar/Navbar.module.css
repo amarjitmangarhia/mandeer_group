@@ -5,11 +5,15 @@
     font-weight: 500;
 }
 
-.container .logo{
+.container .logo {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 20px;
+}
+
+.container .logo:hover{
+    cursor: pointer;
 }
 
 .container header{
