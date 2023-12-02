@@ -1,17 +1,26 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import classes from "./Dropdown.module.css"
+import {dropdownOptions} from '../Global';
+const Dropdown = (props) => {
 
-const Dropdown = () => {
+  useEffect(()=>{
+      console.log( props.selectedDropdownIndex);
+  },[])
   return (
     <>    
     <div className={classes.content}>
     <div className={classes.text}>Search Your Favourite Stock</div>
         <div className={classes.container}>
           <div className={classes.dropdown}>
-            <select id="dropdown" name="dropdown">
-            <option value="option1">Apple</option>
-            <option value="option2">Alphabet</option>
-            <option value="option3">Google</option>
+            <select id="dropdown"  value={dropdownOptions[props.selectedDropdownIndex].value} onChange={(event)=>{
+              props.onChange(event)
+            }}  name="dropdown">
+              {
+                dropdownOptions.map((entry)=>{
+                  return <option value={entry.value}>{entry.name}</option>
+                })
+              }
+
             </select>
         <button>Fetch</button>
         </div>

@@ -1,18 +1,25 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import classes from "./News.module.css"
 import NewsContent from './NewsContent'
-import NewsData from './NewsData'
 
-const News = () => {
-console.log(NewsData)
+
+const News = (data) => {
+  useEffect(() => {
+  
+
+  
+
+    console.log(data.data,"newscomponent"); // Call the asynchronous function
+   
+  }, []);
   return (
     <div className={classes.container}>
             <h2>Latest Stock News</h2>
-               {NewsData.map((news) => {
-                  return  <NewsContent heading = {news.heading} newsContent = {news.newsContent} img = {news.img} key={news.id}/>
+               {data.data.map((news) => {
+                  return  <NewsContent heading = {news.title} newsContent = {news.description} img = {news.urlToImage} key={news.id}/>
                })}
     </div>
-  )
+)
 }
 
 export default News
