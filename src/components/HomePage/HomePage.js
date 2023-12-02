@@ -37,7 +37,6 @@ const HomePage = () => {
 
       setStockData(formattedData);
 
-      console.log(newsDt,"newsDt---")
     const newsDt = await  fetchNewsDetails(selectedDropdownIndex);
       setNewsData(newsDt.articles)
 
