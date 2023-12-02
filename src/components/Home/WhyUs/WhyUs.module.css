@@ -1,0 +1,91 @@
+.container {
+    background-color: rgb(130, 124, 116);
+    color: white;
+    padding: 30px;
+}
+
+.content .heading {
+    font-size: 40px;
+    text-align: center;
+    margin: 30px;
+}
+
+.whyus {
+    display: flex;
+    justify-content: space-around;
+}
+
+.whyus  .data p {
+    background-color: #10866A;
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid;
+}
+
+.whyus .image {
+    width: 100%;
+    max-width: 400px;
+    
+}
+
+
+.card {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    margin-top: 3rem;
+}
+
+.cardContent .cardImage {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.cardContent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cardData {
+    flex: 1;
+}
+
+.cardData h2 {
+    font-size: 30px;
+}
+
+.reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .container {
+        padding: 5px;
+    }
+
+    .whyus {
+        flex-direction: column;
+    }
+
+    .whyus  .data p {
+        text-align: center;
+    }
+
+    .whyus .image {
+        margin: 0 auto;
+    }
+
+    .cardContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+}

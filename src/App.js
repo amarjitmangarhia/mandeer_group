@@ -16,8 +16,8 @@ function App() {
               Assuming ROUTES.WRAPPER is an object containing route props.
               Adjust the route definition based on your ROUTES structure.
             */}
-           <Route {...ROUTES.WRAPPER} />
            <Route {...ROUTES.HOMEPAGE} />
+           <Route {...ROUTES.HOME} />
            
           </Routes>
           {/* Uncomment the following line if RenderRemoteComponent is defined */}
