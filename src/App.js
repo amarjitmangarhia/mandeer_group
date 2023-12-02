@@ -12,12 +12,10 @@ function App() {
       <BrowserRouter>
         <Suspense fallback={<ContentLoader />}>
           <Routes>
-            {/* 
-              Assuming ROUTES.WRAPPER is an object containing route props.
-              Adjust the route definition based on your ROUTES structure.
-            */}
-           <Route {...ROUTES.HOMEPAGE} />
+        
            <Route {...ROUTES.HOME} />
+           <Route {...ROUTES.HOMEPAGE} />
+       
            
           </Routes>
           {/* Uncomment the following line if RenderRemoteComponent is defined */}

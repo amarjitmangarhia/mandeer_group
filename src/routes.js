@@ -1,17 +1,17 @@
 import Home from './components/Home/Home';
 import HomePage from './components/HomePage/HomePage';
-import Wrapper from './components/Wrapper';
+
 
 
 export const ROUTES = {
       HOMEPAGE: { 
-        path: '/',
+        path: '/stockDetails',
         exact: false,
         element: <HomePage />
       },
 
       HOME: { 
-        path: '/test',
+        path: '/',
         exact: false,
         element: <Home />
       },

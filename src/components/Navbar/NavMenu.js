@@ -1,22 +1,16 @@
 import React from 'react'
 import classes from "./Navbar.module.css"
+import { Link } from 'react-router-dom';
 
 const NavMenu = () => {
     return (
         <div className={classes.container}>
             <header>
                 <div className={classes.logo} >
-                    Cloud Project
+                  
+                    <Link to="/"> Cloud Project</Link>
                 </div>
-                <div>
-                <nav>
-                    <ul>
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Contact</li>
-                    </ul>
-                </nav>
-                </div>
+           
             </header>
         </div>
     )

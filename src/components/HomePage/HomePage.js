@@ -1,7 +1,6 @@
 import React, {useEffect,useState} from 'react'
 import NavMenu from '../Navbar/NavMenu'
 import Dropdown from '../Dropdown/Dropdown'
-import Table from '../Table/Table'
 import Graph from '../Graph'
 import Wrapper from '../Wrapper'
 import News from '../News/News'
@@ -22,35 +21,28 @@ const HomePage = () => {
 
   const fetchData = async (selectedDropdownIndex) => {
     try {
-
-   
-
-  
-      
- 
-
-    //   const response = await fetchStockDetails(selectedDropdownIndex);
-    //   console.log(response.data["Time Series (Daily)"]);
-    //   const formattedData = Object.keys(response.data["Time Series (Daily)"]).map(date => ({
-    //     date,
-    //     ...response.data["Time Series (Daily)"][date]
-    //   }));
-
-
-       const formattedData = Object.keys(dt).map(date => ({
+      const response = await fetchStockDetails(selectedDropdownIndex);
+      console.log(response.data["Time Series (Daily)"]);
+      const formattedData = Object.keys(response.data["Time Series (Daily)"]).map(date => ({
         date,
-        ...dt[date]
+        ...response.data["Time Series (Daily)"][date]
       }));
+
+
+    //    const formattedData = Object.keys(dt).map(date => ({
+    //     date,
+    //     ...dt[date]
+    //   }));
 
 
       setStockData(formattedData);
 
-    //   console.log(newsDt,"newsDt---")
-    // const newsDt = await  fetchNewsDetails(selectedDropdownIndex);
-    //   setNewsData(newsDt.articles)
+      console.log(newsDt,"newsDt---")
+    const newsDt = await  fetchNewsDetails(selectedDropdownIndex);
+      setNewsData(newsDt.articles)
 
-    setNewsData(mockNewsDt);
-      // Handle the data as needed
+    // setNewsData(mockNewsDt);
+   
  
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -58,26 +50,18 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-  
-
-  
-
-    fetchData(selectedDropdownIndex); // Call the asynchronous function
+    fetchData(selectedDropdownIndex); 
    
   }, [selectedDropdownIndex]);
 
   return (
     <Wrapper>
-
       <NavMenu />
       <Dropdown selectedDropdownIndex = {selectedDropdownIndex} onChange={(event)=>{
-       
        const index = dropdownOptions.findIndex(item => item['value'] === event.target.value);
-       
         setSelectedDropdownIndex(index);
       }}/>
       <Graph data = {stockData} />
-      {/* <Table data={stockData} /> */}
       {
         stockData.length > 0 && 
         <StockDataWidget data={stockData} />
@@ -86,7 +70,6 @@ const HomePage = () => {
     newsData.length > 0 && 
     <News data={newsData} />
   }
-    
       <Footer />
     </Wrapper>
   )
