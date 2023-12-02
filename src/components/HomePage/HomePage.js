@@ -1,49 +1,92 @@
-import React, {useEffect} from 'react'
+import React, {useEffect,useState} from 'react'
 import NavMenu from '../Navbar/NavMenu'
 import Dropdown from '../Dropdown/Dropdown'
 import Table from '../Table/Table'
-import Graph from '../Graph/Graph'
+import Graph from '../Graph'
 import Wrapper from '../Wrapper'
 import News from '../News/News'
 import Footer from '../Footer/Footer'
-import {fetchStockDetails} from '../../actions/utilities'
+import {fetchStockDetails, fetchNewsDetails} from '../../actions/utilities'
+import StockDataWidget from '../StockDataWidget'
+import{dropdownOptions, dt, mockNewsDt} from '../Global';
 
 
 const HomePage = () => {
 
+
+
+
+  const [stockData, setStockData] = useState([]);
+  const [newsData, setNewsData] = useState([]);
+  const [selectedDropdownIndex, setSelectedDropdownIndex] = useState(0);
+
+  const fetchData = async (selectedDropdownIndex) => {
+    try {
+
+   
+
+  
+      
+ 
+
+    //   const response = await fetchStockDetails(selectedDropdownIndex);
+    //   console.log(response.data["Time Series (Daily)"]);
+    //   const formattedData = Object.keys(response.data["Time Series (Daily)"]).map(date => ({
+    //     date,
+    //     ...response.data["Time Series (Daily)"][date]
+    //   }));
+
+
+       const formattedData = Object.keys(dt).map(date => ({
+        date,
+        ...dt[date]
+      }));
+
+
+      setStockData(formattedData);
+
+    //   console.log(newsDt,"newsDt---")
+    // const newsDt = await  fetchNewsDetails(selectedDropdownIndex);
+    //   setNewsData(newsDt.articles)
+
+    setNewsData(mockNewsDt);
+      // Handle the data as needed
+ 
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
   useEffect(() => {
-    // // Code to run on component mount
-    // console.log('Component is mounted');
-    // fetchStockDetails().then(response => {
-		// 	console.log(response);
-		// });;
+  
 
-    const fetchData = async () => {
-      try {
-        // Perform asynchronous operations (e.g., data fetching)
-        const response = await fetchStockDetails();
-       // const data = await response.json();
+  
 
-        // Handle the data as needed
-        console.log(response);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData(); // Call the asynchronous function
-
-
-  }, []);
+    fetchData(selectedDropdownIndex); // Call the asynchronous function
+   
+  }, [selectedDropdownIndex]);
 
   return (
     <Wrapper>
 
       <NavMenu />
-      <Dropdown />
-      <Graph />
-      <Table />
-      <News />
+      <Dropdown selectedDropdownIndex = {selectedDropdownIndex} onChange={(event)=>{
+       
+       const index = dropdownOptions.findIndex(item => item['value'] === event.target.value);
+       
+        setSelectedDropdownIndex(index);
+      }}/>
+      <Graph data = {stockData} />
+      {/* <Table data={stockData} /> */}
+      {
+        stockData.length > 0 && 
+        <StockDataWidget data={stockData} />
+      }
+  {
+    newsData.length > 0 && 
+    <News data={newsData} />
+  }
+    
       <Footer />
     </Wrapper>
   )

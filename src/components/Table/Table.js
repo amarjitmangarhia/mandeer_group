@@ -1,13 +1,16 @@
 import React from 'react'
 import classes from "./Table.module.css"
 
-const Table = () => {
+const Table = (props) => {
     return (
         <div className={classes.container}>
             <h2>Table Analysis</h2>
             <table>
                 <thead>
                     <tr>
+                    {props.data.map((item) => (
+         <th>{item.date}</th>
+        ))}
                         <th>Stock Name</th>
                         <th>Ask</th>
                         <th>Bid</th>
