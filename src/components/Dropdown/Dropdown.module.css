@@ -8,18 +8,20 @@
     align-items: center;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #20241D;
-    color: #E8E5E1;
-}
-
 .text {
     font-size: 60px;
     text-align: center;
     margin: 30px 0;
+}
+
+.dropdown {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+    height: 100px;
 }
 
 .dropdown label {
@@ -30,32 +32,62 @@
     border: 2px solid;
     background:#455d7a; 
     color: #e3e3e3;
-    width: 300px;
+    font-size: 20px;
     text-align: center;
-    padding: 10px;
+    width: 300px;
+    height: 100%;
 }
 
- .dropdown {
-    padding: 20px;
-    width: 100%;
-    max-width: 400px;
+.dropdown .button {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
 }
 
-.dropdown option {
-    background-color: red;
-
-}
-
-.dropdown  button {
+.dropdown button {
     background: #f95959; 
     color: #e3e3e3; ;
-    padding: 5px;
-    width: 150px;
-    height: auto;
     margin-left: 10px;
     border-radius: 30px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+        .content {
+            height: 100%;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+        }
+    .dropdown {
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .dropdown select {
+
+        background:#455d7a; 
+        color: #e3e3e3;
+        font-size: 20px;
+        text-align: center;
+        width: 300px;
+        height: 60px;
+    }
+
+    .dropdown .button {
+
+        color: #e3e3e3;
+        font-size: 20px;
+        text-align: center;
+        width: 200px;
+        height: 60px;   
+        margin: 10px 0;
+    }
 }
 
 
@@ -63,11 +95,10 @@
     .content {
         background-color: #20241D;
         color: #E8E5E1;
-        height: 100vh;
+        height: 100%;
     }
     .dropdown {
         width: auto;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
         margin-top: 80px;
@@ -75,7 +106,7 @@
 
     .dropdown button {
         margin: 10px 0;
-        height: 40px;
+        height: 60px;
     }
 
     .dropdown select {

@@ -20,9 +20,10 @@ const Dropdown = (props) => {
                   return <option value={entry.value}>{entry.name}</option>
                 })
               }
-
             </select>
-        <button>Fetch</button>
+        <div className={classes.button}>
+          <button>Fetch</button>
+        </div>
         </div>
         </div>
         </div>
